@@ -305,6 +305,8 @@ extension PageViewController: PageViewManagerDelegate {
     func layoutViews(for viewControllers: [UIViewController], keepContentOffset: Bool) {
         let viewControllers = isRightToLeft ? viewControllers.reversed() : viewControllers
 
+        view.setNeedsLayout()
+        
         // Need to trigger a layout here to ensure that the scroll view
         // bounds is updated before we use its frame for calculations.
         view.layoutIfNeeded()
